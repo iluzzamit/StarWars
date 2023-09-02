@@ -46,7 +46,7 @@ export function Peoples() {
         <StyledPeoples maxWidth={false}>
             <div className='header'>
                 <Typography>Peoples</Typography>
-                <SearchBox />
+                <SearchBox autoCompleteResourcePrefix={EnumPages.PEOPLE} />
             </div>
             <DataGrid
                 rows={results}

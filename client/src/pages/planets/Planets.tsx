@@ -44,7 +44,7 @@ export function Planets() {
         <StyledPlanets maxWidth={false}>
             <div className='header'>
                 <Typography>Planets</Typography>
-                <SearchBox />
+                <SearchBox autoCompleteResourcePrefix={EnumPages.PLANET} />
             </div>
             <DataGrid
                 rows={results}
