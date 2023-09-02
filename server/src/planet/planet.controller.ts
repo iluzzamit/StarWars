@@ -8,7 +8,6 @@ export class PlanetController {
 
   @Get()
   async getPlanets(@Query(EnumQueryParams.PAGE) page: number = 1, @Query(EnumQueryParams.SEARCH) search: string = '') {
-    const lala = await this.service.getPlanets(page, search);
-    return lala;
+    return this.service.getPlanets(page, search);
   }
 }
