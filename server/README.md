@@ -1,8 +1,12 @@
-# build
-$ npm run build
+# StarWars Server
 
-# development
-$ npm run start
+## RUN
+- install all dependencies:
+```
+npm install
+```
 
-# production mode
-$ npm run start:prod
+- run the project
+```
+npm start
+```

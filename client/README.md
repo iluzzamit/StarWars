@@ -1,4 +1,4 @@
-# Items
+# StarWars Client
 
 ## RUN
 - install all dependencies:
