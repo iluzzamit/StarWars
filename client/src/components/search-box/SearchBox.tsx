@@ -21,7 +21,6 @@ export function SearchBox({ autoCompleteResourcePrefix }: { autoCompleteResource
     const { results } = data || { results: [] };
     
     const onSubmit = (_: unknown, value: string | null) => {
-        console.log(value);
         setQuery(query => {
             if (value) {
                 query.set(EnumQueryParams.SEARCH, value);
@@ -47,7 +46,6 @@ export function SearchBox({ autoCompleteResourcePrefix }: { autoCompleteResource
                         value={value}
                         label='Search'
                         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                            console.log(event.target.value)
                             setValue(event.target.value)
                         }}
                     />
