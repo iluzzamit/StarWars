@@ -6,9 +6,25 @@ export const StyledAppBar = styled(AppBar)`
     display: flex;
     height: 5rem;
 
-    .title {
+    .header-title {
+        align-items: inherit;
         margin-left: 0.5rem;
-        flex-grow: 1;
+        display: inherit;
+
+        .header-title-logo {
+            display: inherit;
+            align-items: inherit;
+            cursor: pointer;
+            
+            .header-title-text {
+                margin-left: 0.5rem;
+                margin-right: 1rem;
+            }
+        }
+
+        .header-page-button {
+            color: white;
+        }
     }
 
     .logo {
