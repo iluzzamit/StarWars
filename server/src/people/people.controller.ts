@@ -1,3 +1,4 @@
+import { EnumQueryParams } from '../common/enums/EnumQueryParams';
 import { Controller, Get, Query } from '@nestjs/common';
 import { PeopleService } from './people.service';
 
@@ -6,7 +7,7 @@ export class PeopleController {
   constructor(private readonly service: PeopleService) {}
 
   @Get()
-  async getPeoples(@Query('page') page: number = 1, @Query('search') search: string = '') {
+  async getPeoples(@Query(EnumQueryParams.PAGE) page: number = 1, @Query(EnumQueryParams.SEARCH) search: string = '') {
     return this.service.getPeoples(page, search);
   }
 }

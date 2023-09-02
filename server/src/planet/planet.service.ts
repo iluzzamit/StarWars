@@ -1,14 +1,15 @@
-import { EnumConfig } from 'src/common/enum/EnumConfig';
+import { EnumSwapiResources } from 'src/common/enums/EnumSwapiResources';
+import { EnumQueryParams } from 'src/common/enums/EnumQueryParams';
+import { EnumConfig } from '../common/enums/EnumConfig';
 import { ConfigService } from '@nestjs/config';
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { firstValueFrom } from 'rxjs';
 
-
 @Injectable()
 export class PlanetService {
-    resourcePrefix = 'planets'
-    
+    resourcePrefix = EnumSwapiResources.PLANETS
+
     constructor(
         private readonly httpService: HttpService,
         private readonly configService: ConfigService
@@ -16,7 +17,9 @@ export class PlanetService {
 
     async getPlanets(page: number, search: string) {
         const resourceUrl = this.configService.get(EnumConfig.RESOURCE_URL);
-        const response = this.httpService.get(`${resourceUrl + this.resourcePrefix}/?page=${page}&search=${search}`);
+        const response = this.httpService.get(
+            `${resourceUrl + this.resourcePrefix}/?${EnumQueryParams.PAGE}=${page}&${EnumQueryParams.SEARCH}=${search}`
+        );
         return (await firstValueFrom(response)).data;
     }
 }
