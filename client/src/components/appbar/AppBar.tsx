@@ -1,6 +1,6 @@
 import { Button, Toolbar, Typography } from "@mui/material";
 import { EnumPages } from "../../common/enums/EnumPages";
-import { LogoSvg } from "../../common/assets/logo";
+import { LogoSvg } from "../../common/assets/LogoSvg";
 import { useNavigate } from "react-router-dom";
 import { StyledAppBar } from "./AppBar.style";
 
